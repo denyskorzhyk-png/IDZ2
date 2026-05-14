@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #172033;
+}
+
+main {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.screen {
+  display: none;
+  background: #fff;
+  border: 1px solid #dfe4ee;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(30, 41, 59, 0.08);
+}
+
+.screen.active {
+  display: block;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.error {
+  color: #dc2626;
+  min-height: 22px;
+}
+
+.room,
+.player,
+.word {
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.room {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.muted {
+  color: #64748b;
+}
+
+.current {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.inactive {
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+#rule {
+  padding: 12px;
+  border-radius: 8px;
+  background: #eff6ff;
+}
+
+@media (max-width: 640px) {
+  .top,
+  .room {
+    display: block;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 8px;
+  }
+}

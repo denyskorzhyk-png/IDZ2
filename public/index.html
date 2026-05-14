@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гра в слова</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section id="start" class="screen active">
+      <h1>Гра в слова</h1>
+      <p>Підключіться до сервера, створіть кімнату або приєднайтесь до гри.</p>
+      <input id="name" maxlength="20" placeholder="Ваше імʼя">
+      <button id="save-name">Продовжити</button>
+      <p id="start-error" class="error"></p>
+    </section>
+
+    <section id="lobby" class="screen">
+      <div class="top">
+        <div>
+          <h2>Лобі</h2>
+          <p id="player"></p>
+        </div>
+        <button id="create-room">Створити гру</button>
+      </div>
+      <p id="lobby-error" class="error"></p>
+      <div id="rooms"></div>
+    </section>
+
+    <section id="room" class="screen">
+      <div class="top">
+        <div>
+          <h2>Кімната <span id="room-id"></span></h2>
+          <p id="room-status"></p>
+        </div>
+        <button id="leave-room">Вийти</button>
+      </div>
+      <div id="players"></div>
+      <button id="start-game">Почати гру</button>
+      <p id="room-error" class="error"></p>
+    </section>
+
+    <section id="game" class="screen">
+      <div class="top">
+        <h2>Кімната <span id="game-room-id"></span></h2>
+        <button id="leave-game">Покинути гру</button>
+      </div>
+      <p id="turn"></p>
+      <p id="rule"></p>
+      <input id="word" placeholder="Введіть слово">
+      <div class="buttons">
+        <button id="send-word">Надіслати</button>
+        <button id="skip-turn" class="danger">Відмовитись від ходу</button>
+      </div>
+      <p id="word-error" class="error"></p>
+      <h3>Гравці</h3>
+      <div id="game-players"></div>
+      <h3>Історія слів</h3>
+      <div id="history"></div>
+    </section>
+
+    <section id="finish" class="screen">
+      <h2>Гру завершено</h2>
+      <h3 id="winner"></h3>
+      <div id="finish-players"></div>
+      <h3>Слова</h3>
+      <div id="finish-history"></div>
+      <button id="back-lobby">Повернутись у лобі</button>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
